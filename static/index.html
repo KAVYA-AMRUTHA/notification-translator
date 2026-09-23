@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notification Translator</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">NT</span>
+        <span class="brand-name">Notification Translator</span>
+      </div>
+      <p class="tagline">Turn notification noise into clear actions.</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="input-card">
+      <label for="notifications" class="input-label">Paste your notifications, one per line</label>
+      <textarea
+        id="notifications"
+        class="notif-input"
+        placeholder="Gmail: Your interview is scheduled for tomorrow at 10 AM.
+GitHub: You were assigned issue #42 in repository Espial.
+Amazon: Your package will arrive tomorrow between 2 PM and 6 PM.
+Instagram: Someone liked your post.
+SBI: Your account was debited ₹2,500."
+      ></textarea>
+
+      <div class="actions">
+        <button id="analyzeBtn" class="btn btn-primary">Analyze Notifications</button>
+        <button id="exampleBtn" class="btn btn-ghost">Use Example Notifications</button>
+      </div>
+
+      <p id="errorMsg" class="error-msg" hidden></p>
+    </section>
+
+    <section id="loading" class="loading" hidden>
+      <div class="spinner"></div>
+      <p>Understanding your notifications…</p>
+    </section>
+
+    <section id="results" class="results" hidden>
+      <div class="results-summary">
+        <h2>Your Attention</h2>
+        <p id="resultsCount" class="results-count"></p>
+        <div id="summaryPills" class="summary-pills"></div>
+      </div>
+      <div id="resultsGroups" class="results-groups"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Notification noise → AI understanding → what actually needs your attention.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
