@@ -10,7 +10,7 @@ from app.models.notification import NotificationAnalysis
 
 logger = logging.getLogger(__name__)
 
-_GEMINI_MODEL = "gemini-2.0-flash"
+_GEMINI_MODEL = "gemini-3.6-flash"
 
 
 def _make_llm():
